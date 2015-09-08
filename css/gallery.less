@@ -1,0 +1,230 @@
+@import 'elements';
+@overlayColor: black;
+@overlayFade: 25%;
+
+@color: white;
+
+@spacing: 4px;
+@shadow: 0 0 30px 0 black;
+//@shadow: none;
+.maslosoft-gallery{
+	color: @color;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+.maslosoft-gallery-zoom-in{
+	cursor: url(zoom-in.png), pointer;
+	cursor: url(zoom-in.cur), pointer;
+}
+.maslosoft-gallery-zoom-out{
+	cursor: url(zoom-out.png), pointer;
+	cursor: url(zoom-out.cur), pointer;
+}
+.maslosoft-gallery a, .maslosoft-gallery a:hover{
+	color: @color;
+	text-decoration: none;
+	display: inline-block;
+}
+ul.maslosoft-gallery{
+	list-style: none;
+	margin:0px;
+	padding:0px;
+}
+.maslosoft-gallery-body-scrolls{
+	overflow: hidden;
+	// Pad a bit because scrollbar is missing
+	padding-right: 17px;
+}
+.maslosoft-gallery-overlay{
+	/*display:none;*/
+	z-index: 10000;
+	text-align: center;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background: fadeout(@overlayColor, @overlayFade);
+	color:white;
+}
+.maslosoft-gallery-group{
+	list-style: none;
+	margin-bottom:30px;
+}
+.maslosoft-gallery-center-outer{
+	float: right;
+	right: 50%;
+	position: relative;
+}
+.maslosoft-gallery-center-inner{
+	float: right;
+	right: -50%;
+	position: relative;
+}
+.maslosoft-gallery-group-view{
+	display: inline-block;
+	padding:@spacing;
+	// margin: 10px 0px;
+	// background: fadeout(@overlayColor, @overlayFade);
+	// box-shadow: @shadow;
+	vertical-align: top;
+}
+.maslosoft-gallery-group-view img{
+	margin-bottom:4px;
+	box-shadow:@shadow;
+}
+.maslosoft-gallery-image-row{
+	/*margin-bottom: 4px;*/
+	text-align: center;
+}
+.maslosoft-gallery-image-row:last-child{
+	/*margin-bottom: 0px;*/
+}
+.maslosoft-gallery-controls{
+	height: 64px;
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	right:0px;
+}
+.maslosoft-gallery-controls-thumbs{
+	.transition(1s);
+	position:absolute;
+	bottom:10px;
+	left: 0;
+	right: 0;
+	height:64px;
+	/*overflow: hidden;*/
+	white-space: nowrap;
+	/*left:50%;*/
+	.maslosoft-gallery-controls-thumbs-active, a:hover {
+		.transition(333ms);
+		background: white;
+		box-shadow: 0 0 30px 0 white;
+		opacity: 1;
+		img {
+			
+		}
+	}
+	a {
+		opacity: .6;
+		background:white;
+		box-shadow: @shadow;
+		border:1px solid white;
+		border-width: 1px 5px;
+	}
+	img {
+		height:60px;
+		border:1px solid white;
+		filter:grayscale(.7);
+	}
+}
+.maslosoft-gallery-controls-thumbs-active {
+	/*outline:2px solid red;*/
+}
+.maslosoft-gallery-controls-thumbs-selector {
+	.transition(1s);
+	position:absolute;
+	left:0px;
+	bottom:2px;
+	// Height is set to 0 to avoid click blocking
+	height:0px;
+	// background: rgba(255, 255, 255, .5);
+	background: transparent;
+	box-shadow: 0px 0px 0px 0px white;
+}
+.button(@icon, @color: @overlayColor){
+	display:block;
+	position:fixed;
+	width:42px;
+	height:42px;
+	border-radius: 128px;
+	border: 3px solid white;
+	background: url("./@{icon}.png") 50% 50% no-repeat fadeout(@color, @overlayFade);
+	&:hover{
+		background-color: lighten(@color, @overlayFade);
+	}
+	box-shadow:@shadow;
+}
+.moveLower(@buttonsNum: 1) {
+	margin-top: @buttonsNum * 60px;
+}
+.moveRight(@buttonsNum: 1) {
+	margin-left: @buttonsNum * 60px;
+}
+.moveLeft(@buttonsNum: 1) {
+	margin-right: @buttonsNum * 60px;
+}
+.moveUp(@buttonsNum: 1) {
+	margin-bottom: @buttonsNum * 60px;
+}
+.maslosoft-gallery-prev{
+	.button('left-arrow');
+	top: 44%;
+	left: 1em;
+	
+}
+.maslosoft-gallery-next{
+	.button('right-arrow');
+	top: 44%;
+	right: 1em;
+}
+.maslosoft-gallery-play{
+	.button('play');
+	top: 1em;
+	left: 1em;
+}
+.maslosoft-gallery-pause{
+	.button('pause');
+	top: 1em;
+	left: 1em;
+}
+.maslosoft-gallery-close{
+	.button('close');
+	top: 1em;
+	right: 1em;
+}
+.maslosoft-gallery-full-screen{
+	.button('full-screen');
+	.moveRight(1);
+	top: 1em;
+	left: 1em;
+}
+.maslosoft-gallery-normal-screen{
+	.button('normal-screen');
+	.moveRight(1);
+	top: 1em;
+	left: 1em;
+}
+.maslosoft-gallery-f{
+	.button('f');
+	.moveLeft(3);
+	bottom: 1em;
+	right: 1em;
+
+}
+.maslosoft-gallery-t{
+	.button('t');
+	.moveLeft(2);
+	bottom: 1em;
+	right: 1em;
+}
+.maslosoft-gallery-in{
+	.button('in');
+	.moveLeft(1);
+	bottom: 1em;
+	right: 1em;
+
+}
+.maslosoft-gallery-plus{
+	.button('plus');
+	// .moveRight(3);
+	bottom: 1em;
+	right: 1em;
+}

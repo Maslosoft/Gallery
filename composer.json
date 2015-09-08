@@ -1,0 +1,20 @@
+{
+    "name": "maslosoft/gallery",
+    "description": "Multi-image-at-once gallery",
+    "require-dev": {
+        "maslosoft/hedron": "*"
+    },
+    "license": "[AGPL, Commercial]",
+	"autoload": {
+		"psr-4": {
+			"src": "Maslosoft\\Gallery\\"
+		}
+	},
+    "authors": [
+        {
+            "name": "Peter Maselkowski",
+            "email": "pmaselkowski@gmail.com"
+        }
+    ],
+    "require": {}
+}

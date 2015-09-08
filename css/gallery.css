@@ -1,0 +1,311 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+.maslosoft-gallery {
+  color: white;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.maslosoft-gallery-zoom-in {
+  cursor: url(zoom-in.png), pointer;
+  cursor: url(zoom-in.cur), pointer;
+}
+.maslosoft-gallery-zoom-out {
+  cursor: url(zoom-out.png), pointer;
+  cursor: url(zoom-out.cur), pointer;
+}
+.maslosoft-gallery a,
+.maslosoft-gallery a:hover {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+ul.maslosoft-gallery {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.maslosoft-gallery-body-scrolls {
+  overflow: hidden;
+  padding-right: 17px;
+}
+.maslosoft-gallery-overlay {
+  /*display:none;*/
+  z-index: 10000;
+  text-align: center;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+}
+.maslosoft-gallery-group {
+  list-style: none;
+  margin-bottom: 30px;
+}
+.maslosoft-gallery-center-outer {
+  float: right;
+  right: 50%;
+  position: relative;
+}
+.maslosoft-gallery-center-inner {
+  float: right;
+  right: -50%;
+  position: relative;
+}
+.maslosoft-gallery-group-view {
+  display: inline-block;
+  padding: 4px;
+  vertical-align: top;
+}
+.maslosoft-gallery-group-view img {
+  margin-bottom: 4px;
+  box-shadow: 0 0 30px 0 black;
+}
+.maslosoft-gallery-image-row {
+  /*margin-bottom: 4px;*/
+  text-align: center;
+}
+.maslosoft-gallery-image-row:last-child {
+  /*margin-bottom: 0px;*/
+}
+.maslosoft-gallery-controls {
+  height: 64px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+.maslosoft-gallery-controls-thumbs {
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  height: 64px;
+  /*overflow: hidden;*/
+  white-space: nowrap;
+  /*left:50%;*/
+}
+.maslosoft-gallery-controls-thumbs .maslosoft-gallery-controls-thumbs-active,
+.maslosoft-gallery-controls-thumbs a:hover {
+  -webkit-transition: all 333ms ease-out;
+  -moz-transition: all 333ms ease-out;
+  -o-transition: all 333ms ease-out;
+  transition: all 333ms ease-out;
+  background: white;
+  box-shadow: 0 0 30px 0 white;
+  opacity: 1;
+}
+.maslosoft-gallery-controls-thumbs a {
+  opacity: .6;
+  background: white;
+  box-shadow: 0 0 30px 0 black;
+  border: 1px solid white;
+  border-width: 1px 5px;
+}
+.maslosoft-gallery-controls-thumbs img {
+  height: 60px;
+  border: 1px solid white;
+  filter: grayscale(0.7);
+}
+.maslosoft-gallery-controls-thumbs-active {
+  /*outline:2px solid red;*/
+}
+.maslosoft-gallery-controls-thumbs-selector {
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  position: absolute;
+  left: 0px;
+  bottom: 2px;
+  height: 0px;
+  background: transparent;
+  box-shadow: 0px 0px 0px 0px white;
+}
+.maslosoft-gallery-prev {
+  display: block;
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  border-radius: 128px;
+  border: 3px solid white;
+  background: url("left-arrow.png") 50% 50% no-repeat rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 30px 0 black;
+  top: 44%;
+  left: 1em;
+}
+.maslosoft-gallery-prev:hover {
+  background-color: #404040;
+}
+.maslosoft-gallery-next {
+  display: block;
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  border-radius: 128px;
+  border: 3px solid white;
+  background: url("right-arrow.png") 50% 50% no-repeat rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 30px 0 black;
+  top: 44%;
+  right: 1em;
+}
+.maslosoft-gallery-next:hover {
+  background-color: #404040;
+}
+.maslosoft-gallery-play {
+  display: block;
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  border-radius: 128px;
+  border: 3px solid white;
+  background: url("play.png") 50% 50% no-repeat rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 30px 0 black;
+  top: 1em;
+  left: 1em;
+}
+.maslosoft-gallery-play:hover {
+  background-color: #404040;
+}
+.maslosoft-gallery-pause {
+  display: block;
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  border-radius: 128px;
+  border: 3px solid white;
+  background: url("pause.png") 50% 50% no-repeat rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 30px 0 black;
+  top: 1em;
+  left: 1em;
+}
+.maslosoft-gallery-pause:hover {
+  background-color: #404040;
+}
+.maslosoft-gallery-close {
+  display: block;
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  border-radius: 128px;
+  border: 3px solid white;
+  background: url("close.png") 50% 50% no-repeat rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 30px 0 black;
+  top: 1em;
+  right: 1em;
+}
+.maslosoft-gallery-close:hover {
+  background-color: #404040;
+}
+.maslosoft-gallery-full-screen {
+  display: block;
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  border-radius: 128px;
+  border: 3px solid white;
+  background: url("full-screen.png") 50% 50% no-repeat rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 30px 0 black;
+  margin-left: 60px;
+  top: 1em;
+  left: 1em;
+}
+.maslosoft-gallery-full-screen:hover {
+  background-color: #404040;
+}
+.maslosoft-gallery-normal-screen {
+  display: block;
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  border-radius: 128px;
+  border: 3px solid white;
+  background: url("normal-screen.png") 50% 50% no-repeat rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 30px 0 black;
+  margin-left: 60px;
+  top: 1em;
+  left: 1em;
+}
+.maslosoft-gallery-normal-screen:hover {
+  background-color: #404040;
+}
+.maslosoft-gallery-f {
+  display: block;
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  border-radius: 128px;
+  border: 3px solid white;
+  background: url("f.png") 50% 50% no-repeat rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 30px 0 black;
+  margin-right: 180px;
+  bottom: 1em;
+  right: 1em;
+}
+.maslosoft-gallery-f:hover {
+  background-color: #404040;
+}
+.maslosoft-gallery-t {
+  display: block;
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  border-radius: 128px;
+  border: 3px solid white;
+  background: url("t.png") 50% 50% no-repeat rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 30px 0 black;
+  margin-right: 120px;
+  bottom: 1em;
+  right: 1em;
+}
+.maslosoft-gallery-t:hover {
+  background-color: #404040;
+}
+.maslosoft-gallery-in {
+  display: block;
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  border-radius: 128px;
+  border: 3px solid white;
+  background: url("in.png") 50% 50% no-repeat rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 30px 0 black;
+  margin-right: 60px;
+  bottom: 1em;
+  right: 1em;
+}
+.maslosoft-gallery-in:hover {
+  background-color: #404040;
+}
+.maslosoft-gallery-plus {
+  display: block;
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  border-radius: 128px;
+  border: 3px solid white;
+  background: url("plus.png") 50% 50% no-repeat rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 30px 0 black;
+  bottom: 1em;
+  right: 1em;
+}
+.maslosoft-gallery-plus:hover {
+  background-color: #404040;
+}
+/*# sourceMappingURL=css/gallery.css.map */

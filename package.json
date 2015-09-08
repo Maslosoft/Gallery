@@ -1,0 +1,33 @@
+{
+  "name": "maslosoft-gallery",
+  "version": "1.0.0",
+  "description": "Maslosoft Gallery",
+  "main": "dist/js/GalleryWidget.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Maslosoft/IlmatarWidgets.git"
+  },
+  "keywords": [
+    "quad",
+    "menu",
+    "context",
+    "menu",
+    "quad"
+  ],
+  "author": "",
+  "license": "AGPL/Commercial",
+  "bugs": {
+    "url": "https://github.com/Maslosoft/IlmatarWidgets/issues"
+  },
+  "homepage": "https://github.com/Maslosoft/IlmatarWidgets",
+  "dependencies": {
+    "grunt-contrib-coffee": "^0.13.0",
+    "grunt-contrib-cssmin": "^0.13.0",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
