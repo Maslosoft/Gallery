@@ -12,7 +12,7 @@
  * @link http://maslosoft.com/
  */
 
-namespace Maslosoft\Ilmatar\Widgets\Gallery;
+namespace Maslosoft\Gallery;
 
 use CComponent;
 

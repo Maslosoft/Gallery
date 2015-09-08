@@ -1,7 +1,7 @@
-class @Maslosoft.Ilmatar.Widgets.Gallery.Activities
+class @Maslosoft.Gallery.Activities
 
 	#
-	# @var @Maslosoft.Ilmatar.Widgets.Gallery.GalleryVm
+	# @var @Maslosoft.Gallery.GalleryVm
 	#
 	vm: null
 
@@ -12,11 +12,11 @@ class @Maslosoft.Ilmatar.Widgets.Gallery.Activities
 	presenter: null
 
 	#
-	# @param Maslosoft.Ilmatar.Widgets.Gallery.GalleryWidget gallery
+	# @param Maslosoft.Gallery.GalleryWidget gallery
 	#
 	constructor: (gallery) ->
 		@vm = gallery.vm
-		@dm = new Maslosoft.Ilmatar.Widgets.Gallery.DataManager(gallery)
+		@dm = new Maslosoft.Gallery.DataManager(gallery)
 		@presenter = gallery.presenter
 		@action = gallery.action
 	

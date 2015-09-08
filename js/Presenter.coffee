@@ -1,4 +1,4 @@
-class @Maslosoft.Ilmatar.Widgets.Gallery.Presenter
+class @Maslosoft.Gallery.Presenter
 	#
 	# @var string
 	#
@@ -27,7 +27,7 @@ class @Maslosoft.Ilmatar.Widgets.Gallery.Presenter
 	moves: 100
 
 	#
-	# @param Maslosoft.Ilmatar.Widgets.Gallery.GalleryWidget gallery
+	# @param Maslosoft.Gallery.GalleryWidget gallery
 	#
 	constructor: (gallery) ->
 

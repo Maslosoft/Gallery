@@ -1,19 +1,10 @@
 if not @Maslosoft
 	@Maslosoft = {}
 
-if not @Maslosoft.Ilmatar
-	@Maslosoft.Ilmatar = {}
+if not @Maslosoft.Gallery
+	@Maslosoft.Gallery = {}
 
-if not @Maslosoft.Ilmatar.Widgets
-	@Maslosoft.Ilmatar.Widgets = {}
-
-if not @Maslosoft.Ilmatar.Widgets
-	@Maslosoft.Ilmatar.Widgets = {}
-
-if not @Maslosoft.Ilmatar.Widgets.Gallery
-	@Maslosoft.Ilmatar.Widgets.Gallery = {}
-
-class @Maslosoft.Ilmatar.Widgets.Gallery.Presenter
+class @Maslosoft.Gallery.Presenter
 	#
 	# @var string
 	#
@@ -42,7 +33,7 @@ class @Maslosoft.Ilmatar.Widgets.Gallery.Presenter
 	moves: 100
 
 	#
-	# @param Maslosoft.Ilmatar.Widgets.Gallery.GalleryWidget gallery
+	# @param Maslosoft.Gallery.GalleryWidget gallery
 	#
 	constructor: (gallery) ->
 
@@ -362,30 +353,30 @@ class @Maslosoft.Ilmatar.Widgets.Gallery.Presenter
 
 		[seq[i] for i in [0...n+1]].concat ans
 
-class @Maslosoft.Ilmatar.Widgets.Gallery.Actions
+class @Maslosoft.Gallery.Actions
 
 	#
-	# @var @Maslosoft.Ilmatar.Widgets.Gallery.GalleryVm
+	# @var @Maslosoft.Gallery.GalleryVm
 	#
 	vm: null
 
 	#
-	# @var Maslosoft.Ilmatar.Widgets.Gallery.Presenter
+	# @var Maslosoft.Gallery.Presenter
 	#
 	presenter: null
 
 	#
-	# @var Maslosoft.Ilmatar.Widgets.Gallery.DataManager
+	# @var Maslosoft.Gallery.DataManager
 	#
 	dm: null
 
 	#
-	# @param Maslosoft.Ilmatar.Widgets.Gallery.GalleryWidget gallery
+	# @param Maslosoft.Gallery.GalleryWidget gallery
 	#
 	constructor: (gallery) ->
 		@vm = gallery.vm
 		@presenter = gallery.presenter
-		@dm = new Maslosoft.Ilmatar.Widgets.Gallery.DataManager(gallery)
+		@dm = new Maslosoft.Gallery.DataManager(gallery)
 		
 	##
 	# Actions
@@ -440,10 +431,10 @@ class @Maslosoft.Ilmatar.Widgets.Gallery.Actions
 		History.pushState(null, null, purl(window.location).attr('path'))
 		@presenter.hideOverlay()
 
-class @Maslosoft.Ilmatar.Widgets.Gallery.Activities
+class @Maslosoft.Gallery.Activities
 
 	#
-	# @var @Maslosoft.Ilmatar.Widgets.Gallery.GalleryVm
+	# @var @Maslosoft.Gallery.GalleryVm
 	#
 	vm: null
 
@@ -454,11 +445,11 @@ class @Maslosoft.Ilmatar.Widgets.Gallery.Activities
 	presenter: null
 
 	#
-	# @param Maslosoft.Ilmatar.Widgets.Gallery.GalleryWidget gallery
+	# @param Maslosoft.Gallery.GalleryWidget gallery
 	#
 	constructor: (gallery) ->
 		@vm = gallery.vm
-		@dm = new Maslosoft.Ilmatar.Widgets.Gallery.DataManager(gallery)
+		@dm = new Maslosoft.Gallery.DataManager(gallery)
 		@presenter = gallery.presenter
 		@action = gallery.action
 	
@@ -487,15 +478,15 @@ class @Maslosoft.Ilmatar.Widgets.Gallery.Activities
 			screenfull.exit()
 
 
-class @Maslosoft.Ilmatar.Widgets.Gallery.DataManager
+class @Maslosoft.Gallery.DataManager
 
 	#
-	# @var @Maslosoft.Ilmatar.Widgets.Gallery.GalleryVm
+	# @var @Maslosoft.Gallery.GalleryVm
 	#
 	vm: null
 
 	#
-	# @param Maslosoft.Ilmatar.Widgets.Gallery.GalleryWidget gallery
+	# @param Maslosoft.Gallery.GalleryWidget gallery
 	#
 	constructor: (gallery) ->
 		@vm = gallery.vm
@@ -557,17 +548,17 @@ class @Maslosoft.Ilmatar.Widgets.Gallery.DataManager
 					return item
 		return false
 
-class @Maslosoft.Ilmatar.Widgets.Gallery.Grid
+class @Maslosoft.Gallery.Grid
 
 	vm: null
 
 	#
-	# @param Maslosoft.Ilmatar.Widgets.Gallery.GalleryWidget gallery
+	# @param Maslosoft.Gallery.GalleryWidget gallery
 	#
 	constructor: (gallery) ->
 		@vm = gallery.vm
 
-class @Maslosoft.Ilmatar.Widgets.Gallery.GalleryWidget
+class @Maslosoft.Gallery.GalleryWidget
 
 	#
 	# @var string
@@ -575,35 +566,35 @@ class @Maslosoft.Ilmatar.Widgets.Gallery.GalleryWidget
 	id: ''
 
 	#
-	# @var Maslosoft.Ilmatar.Widgets.Gallery.Options
+	# @var Maslosoft.Gallery.Options
 	#
 	options: {}
 
 	#
-	# @var @Maslosoft.Ilmatar.Widgets.Gallery.GalleryVm
+	# @var @Maslosoft.Gallery.GalleryVm
 	#
 	vm: null
 
 	#
-	# @var Maslosoft.Ilmatar.Widgets.Gallery.Presenter
+	# @var Maslosoft.Gallery.Presenter
 	#
 	presenter: null
 
 	#
-	# @var Maslosoft.Ilmatar.Widgets.Gallery.Actions
+	# @var Maslosoft.Gallery.Actions
 	#
 	action: null
 
 	#
-	# @var Maslosoft.Ilmatar.Widgets.Gallery.Activities
+	# @var Maslosoft.Gallery.Activities
 	#
 	activity: null
 
 	constructor: (@id, @vm = {}, @options = {}) ->
 
-		@presenter = new Maslosoft.Ilmatar.Widgets.Gallery.Presenter(@)
-		@action = new Maslosoft.Ilmatar.Widgets.Gallery.Actions(@)
-		@activity = new Maslosoft.Ilmatar.Widgets.Gallery.Activities(@)
+		@presenter = new Maslosoft.Gallery.Presenter(@)
+		@action = new Maslosoft.Gallery.Actions(@)
+		@activity = new Maslosoft.Gallery.Activities(@)
 		
 		# Click events binding
 		@presenter.element.on "click", ".maslosoft-gallery-image-url", @urlClick

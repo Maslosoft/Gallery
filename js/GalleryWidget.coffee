@@ -1,4 +1,4 @@
-class @Maslosoft.Ilmatar.Widgets.Gallery.GalleryWidget
+class @Maslosoft.Gallery.GalleryWidget
 
 	#
 	# @var string
@@ -6,35 +6,35 @@ class @Maslosoft.Ilmatar.Widgets.Gallery.GalleryWidget
 	id: ''
 
 	#
-	# @var Maslosoft.Ilmatar.Widgets.Gallery.Options
+	# @var Maslosoft.Gallery.Options
 	#
 	options: {}
 
 	#
-	# @var @Maslosoft.Ilmatar.Widgets.Gallery.GalleryVm
+	# @var @Maslosoft.Gallery.GalleryVm
 	#
 	vm: null
 
 	#
-	# @var Maslosoft.Ilmatar.Widgets.Gallery.Presenter
+	# @var Maslosoft.Gallery.Presenter
 	#
 	presenter: null
 
 	#
-	# @var Maslosoft.Ilmatar.Widgets.Gallery.Actions
+	# @var Maslosoft.Gallery.Actions
 	#
 	action: null
 
 	#
-	# @var Maslosoft.Ilmatar.Widgets.Gallery.Activities
+	# @var Maslosoft.Gallery.Activities
 	#
 	activity: null
 
 	constructor: (@id, @vm = {}, @options = {}) ->
 
-		@presenter = new Maslosoft.Ilmatar.Widgets.Gallery.Presenter(@)
-		@action = new Maslosoft.Ilmatar.Widgets.Gallery.Actions(@)
-		@activity = new Maslosoft.Ilmatar.Widgets.Gallery.Activities(@)
+		@presenter = new Maslosoft.Gallery.Presenter(@)
+		@action = new Maslosoft.Gallery.Actions(@)
+		@activity = new Maslosoft.Gallery.Activities(@)
 		
 		# Click events binding
 		@presenter.element.on "click", ".maslosoft-gallery-image-url", @urlClick

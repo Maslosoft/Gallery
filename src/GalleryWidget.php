@@ -12,17 +12,16 @@
  * @link http://maslosoft.com/
  */
 
-namespace Maslosoft\Ilmatar\Widgets\Gallery;
+namespace Maslosoft\Gallery;
 
 use CDataProvider;
 use Maslosoft\Ilmatar\Components\JavaScript;
-use Maslosoft\Ilmatar\Widgets\Gallery\Adapter\MongoGroup;
+use Maslosoft\Gallery\Adapter\MongoGroup;
 use Maslosoft\Ilmatar\Widgets\JsWidget;
 use Maslosoft\Ilmatar\Widgets\MsWidget;
 
 /**
  * Description of Gallery
- * TODO Move to separate project
  * @author Piotr
  */
 class GalleryWidget extends MsWidget
@@ -169,7 +168,7 @@ class GalleryWidget extends MsWidget
 
 	public function run()
 	{
-		$this->render('gallery');
+		return $this->render('gallery', [], true);
 	}
 
 	private function _initGroups()

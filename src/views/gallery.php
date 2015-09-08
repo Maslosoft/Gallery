@@ -3,7 +3,7 @@
 use Maslosoft\Gallery\GalleryWidget;
 use Maslosoft\Gallery\Group;
 use Maslosoft\Gallery\Item;
-use Maslosoft\Ilmatar\Widgets\Gallery\GalleryVm;
+use Maslosoft\Gallery\GalleryVm;
 ?>
 <?php
 $vm = $this->vm;

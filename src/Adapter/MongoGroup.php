@@ -12,7 +12,7 @@
  * @link http://maslosoft.com/
  */
 
-namespace Maslosoft\Ilmatar\Widgets\Gallery\Adapter;
+namespace Maslosoft\Gallery\Adapter;
 
 use Maslosoft\Mangan\DataProvider;
 use InvalidArgumentException;

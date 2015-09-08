@@ -42,13 +42,13 @@ module.exports = (grunt) ->
 		less:
 			compile:
 				files:
-					'css/gallery.css' : less
+					'dist/css/gallery.css' : less
 				options:
 					sourceMap: true
 		cssmin:
 			target:
 				files:
-					'css/gallery.min.css' : ['css/gallery.css']
+					'dist/css/gallery.min.css' : ['dist/css/gallery.css']
 
 	# These plugins provide necessary tasks.
 	grunt.loadNpmTasks 'grunt-contrib-coffee'

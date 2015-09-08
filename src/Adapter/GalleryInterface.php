@@ -12,7 +12,7 @@
  * @link http://maslosoft.com/
  */
 
-namespace Maslosoft\Ilmatar\Widgets\Gallery\Adapter;
+namespace Maslosoft\Gallery\Adapter;
 
 /**
  * Implement this interface to build groups of images from any source

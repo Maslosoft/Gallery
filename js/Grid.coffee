@@ -1,9 +1,9 @@
-class @Maslosoft.Ilmatar.Widgets.Gallery.Grid
+class @Maslosoft.Gallery.Grid
 
 	vm: null
 
 	#
-	# @param Maslosoft.Ilmatar.Widgets.Gallery.GalleryWidget gallery
+	# @param Maslosoft.Gallery.GalleryWidget gallery
 	#
 	constructor: (gallery) ->
 		@vm = gallery.vm

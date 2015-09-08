@@ -12,14 +12,16 @@
  * @link http://maslosoft.com/
  */
 
-namespace Maslosoft\Ilmatar\Widgets\Gallery;
+namespace Maslosoft\Gallery;
 
 use Maslosoft\Hi5Edit\Blocks\Base\ContentBlock;
 use Maslosoft\Hi5Edit\Interfaces\IEditorWidget;
+use Maslosoft\Hi5Edit\Signals\EditorWidget;
+use function tx;
 
 /**
  * Photo gallery widget class
- * 
+ *
  * @license licence
  * @copyright licence
  * @author Piotr Maselkowski <piotr at maselkowski dot pl>
@@ -64,14 +66,14 @@ class GalleryBlock extends ContentBlock implements IEditorWidget
 
 	public function editToolbar()
 	{
-		
+
 	}
 
 	/**
-	 * @SlotFor('Maslosoft\Hi5Edit\Signals\EditorWidget')
-	 * @param \Maslosoft\Hi5Edit\Signals\EditorWidget $signal
+	 * @SlotFor(EditorWidget)
+	 * @param EditorWidget $signal
 	 */
-	public function reactOn(\Maslosoft\Hi5Edit\Signals\EditorWidget $signal)
+	public function reactOn(EditorWidget $signal)
 	{
 		$signal->widget = $this;
 	}

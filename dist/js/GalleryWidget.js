@@ -5,23 +5,11 @@
     this.Maslosoft = {};
   }
 
-  if (!this.Maslosoft.Ilmatar) {
-    this.Maslosoft.Ilmatar = {};
+  if (!this.Maslosoft.Gallery) {
+    this.Maslosoft.Gallery = {};
   }
 
-  if (!this.Maslosoft.Ilmatar.Widgets) {
-    this.Maslosoft.Ilmatar.Widgets = {};
-  }
-
-  if (!this.Maslosoft.Ilmatar.Widgets) {
-    this.Maslosoft.Ilmatar.Widgets = {};
-  }
-
-  if (!this.Maslosoft.Ilmatar.Widgets.Gallery) {
-    this.Maslosoft.Ilmatar.Widgets.Gallery = {};
-  }
-
-  this.Maslosoft.Ilmatar.Widgets.Gallery.Presenter = (function() {
+  this.Maslosoft.Gallery.Presenter = (function() {
     Presenter.prototype.id = '';
 
     Presenter.prototype.element = null;
@@ -411,7 +399,7 @@
 
   })();
 
-  this.Maslosoft.Ilmatar.Widgets.Gallery.Actions = (function() {
+  this.Maslosoft.Gallery.Actions = (function() {
     Actions.prototype.vm = null;
 
     Actions.prototype.presenter = null;
@@ -421,7 +409,7 @@
     function Actions(gallery) {
       this.vm = gallery.vm;
       this.presenter = gallery.presenter;
-      this.dm = new Maslosoft.Ilmatar.Widgets.Gallery.DataManager(gallery);
+      this.dm = new Maslosoft.Gallery.DataManager(gallery);
     }
 
     Actions.prototype.page = function(page) {};
@@ -466,7 +454,7 @@
 
   })();
 
-  this.Maslosoft.Ilmatar.Widgets.Gallery.Activities = (function() {
+  this.Maslosoft.Gallery.Activities = (function() {
     Activities.prototype.vm = null;
 
     Activities.prototype.dm = null;
@@ -478,7 +466,7 @@
     function Activities(gallery) {
       this.slider = bind(this.slider, this);
       this.vm = gallery.vm;
-      this.dm = new Maslosoft.Ilmatar.Widgets.Gallery.DataManager(gallery);
+      this.dm = new Maslosoft.Gallery.DataManager(gallery);
       this.presenter = gallery.presenter;
       this.action = gallery.action;
     }
@@ -515,7 +503,7 @@
 
   })();
 
-  this.Maslosoft.Ilmatar.Widgets.Gallery.DataManager = (function() {
+  this.Maslosoft.Gallery.DataManager = (function() {
     DataManager.prototype.vm = null;
 
     function DataManager(gallery) {
@@ -585,7 +573,7 @@
 
   })();
 
-  this.Maslosoft.Ilmatar.Widgets.Gallery.Grid = (function() {
+  this.Maslosoft.Gallery.Grid = (function() {
     Grid.prototype.vm = null;
 
     function Grid(gallery) {
@@ -596,7 +584,7 @@
 
   })();
 
-  this.Maslosoft.Ilmatar.Widgets.Gallery.GalleryWidget = (function() {
+  this.Maslosoft.Gallery.GalleryWidget = (function() {
     GalleryWidget.prototype.id = '';
 
     GalleryWidget.prototype.options = {};
@@ -617,9 +605,9 @@
       this.urlClick = bind(this.urlClick, this);
       this.hashChange = bind(this.hashChange, this);
       this.historyChange = bind(this.historyChange, this);
-      this.presenter = new Maslosoft.Ilmatar.Widgets.Gallery.Presenter(this);
-      this.action = new Maslosoft.Ilmatar.Widgets.Gallery.Actions(this);
-      this.activity = new Maslosoft.Ilmatar.Widgets.Gallery.Activities(this);
+      this.presenter = new Maslosoft.Gallery.Presenter(this);
+      this.action = new Maslosoft.Gallery.Actions(this);
+      this.activity = new Maslosoft.Gallery.Activities(this);
       this.presenter.element.on("click", ".maslosoft-gallery-image-url", this.urlClick);
       this.presenter.overlay.on('click', '.maslosoft-gallery-image-row', this.overlayClick);
       jQuery(window).resize(this.presenter.resize);
