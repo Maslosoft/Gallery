@@ -1,20 +1,23 @@
 {
-    "name": "maslosoft/gallery",
-    "description": "Multi-image-at-once gallery",
-    "require-dev": {
-        "maslosoft/hedron": "*"
-    },
-    "license": "[AGPL, Commercial]",
+	"name": "maslosoft/gallery",
+	"description": "Multi-image-at-once gallery",
+	"require-dev": {
+		"maslosoft/hedron": "*"
+	},
+	"license": [
+		"AGPL",
+		"Commercial"
+	],
 	"autoload": {
 		"psr-4": {
 			"Maslosoft\\Gallery\\": "src"
 		}
 	},
-    "authors": [
-        {
-            "name": "Peter Maselkowski",
-            "email": "pmaselkowski@gmail.com"
-        }
-    ],
-    "require": {}
+	"authors": [
+		{
+			"name": "Peter Maselkowski",
+			"email": "pmaselkowski@gmail.com"
+		}
+	],
+	"require": {}
 }
