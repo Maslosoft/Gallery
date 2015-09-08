@@ -7,7 +7,7 @@
     "license": "[AGPL, Commercial]",
 	"autoload": {
 		"psr-4": {
-			"src": "Maslosoft\\Gallery\\"
+			"Maslosoft\\Gallery\\": "src"
 		}
 	},
     "authors": [
