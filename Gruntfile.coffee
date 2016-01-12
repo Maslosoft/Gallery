@@ -12,6 +12,14 @@ less = [
 	'css/gallery.less'
 ]
 
+copy = {
+	gallery:
+		expand:true
+		cwd: 'css'
+		src: '*.png'
+		dest: 'dist/css/maslosoft-gallery'
+}
+
 module.exports = (grunt) ->
 	c = new Array
 	for name in coffees
@@ -49,6 +57,7 @@ module.exports = (grunt) ->
 			target:
 				files:
 					'dist/css/gallery.min.css' : ['dist/css/gallery.css']
+		copy: copy
 
 	# These plugins provide necessary tasks.
 	grunt.loadNpmTasks 'grunt-contrib-coffee'
@@ -56,6 +65,7 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-uglify'
 	grunt.loadNpmTasks 'grunt-contrib-less'
 	grunt.loadNpmTasks 'grunt-contrib-cssmin'
+	grunt.loadNpmTasks 'grunt-contrib-copy'
 
 	# Default task.
-	grunt.registerTask 'default', ['coffee', 'less', 'uglify', 'cssmin']
+	grunt.registerTask 'default', ['coffee', 'less', 'uglify', 'cssmin', 'copy']

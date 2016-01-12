@@ -147,10 +147,10 @@ class GalleryWidget extends MsWidget
 			JavaScript::encode($options)
 		];
 
-		$this->jsRef = new JsWidget($this, $params, __DIR__ . '/dist');
+		$this->jsRef = new JsWidget($this, $params, __DIR__ . '/../dist');
 
-		$path = $this->assetManager->publish(__DIR__ . '/css/');
-		$this->clientScript->registerCssFile($path . '/gallery.css');
+		$path = $this->assetManager->publish(__DIR__ . '/../dist/css/');
+		$this->clientScript->registerCssFile($path . '/gallery.min.css');
 
 		if (null === $this->adapter)
 		{
