@@ -11,8 +11,12 @@ class @Maslosoft.Gallery.GalleryBlock_Base extends @Maslosoft.Components.Model
 	widgetTemplate: ''
 	optionsTemplate: ''
 	cellAttributes: []
+	createUser: null
+	createDate: null
+	updateUser: null
+	updateDate: null
+	rawI18N: []
 	_id: null
 	_key: ''
 	_class: 'Maslosoft\\Gallery\\GalleryBlock'
-	meta: null
 
