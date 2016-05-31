@@ -15,7 +15,7 @@
 namespace Maslosoft\Gallery;
 
 use Maslosoft\Hi5Edit\Blocks\Base\ContentBlock;
-use Maslosoft\Hi5Edit\Interfaces\IEditorWidget;
+use Maslosoft\Hi5Edit\Interfaces\EditorWidgetInterface;
 use Maslosoft\Hi5Edit\Signals\EditorWidget;
 use function tx;
 
@@ -26,7 +26,7 @@ use function tx;
  * @copyright licence
  * @author Piotr Maselkowski <piotr at maselkowski dot pl>
  */
-class GalleryBlock extends ContentBlock implements IEditorWidget
+class GalleryBlock extends ContentBlock implements EditorWidgetInterface
 {
 
 	public function getName()
