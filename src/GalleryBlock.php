@@ -17,11 +17,11 @@ namespace Maslosoft\Gallery;
 use Maslosoft\Hi5Edit\Blocks\Base\ContentBlock;
 use Maslosoft\Hi5Edit\Interfaces\EditorWidgetInterface;
 use Maslosoft\Hi5Edit\Signals\EditorWidget;
-use function tx;
 
 /**
  * Photo gallery widget class
- *
+ * @Label('Advanced Gallery')
+ * @Description('Gallery with support for groupping image display')
  * @license licence
  * @copyright licence
  * @author Piotr Maselkowski <piotr at maselkowski dot pl>
@@ -29,48 +29,18 @@ use function tx;
 class GalleryBlock extends ContentBlock implements EditorWidgetInterface
 {
 
-	public function getName()
-	{
-		return tx('Image gallery');
-	}
-
 	public function edit()
 	{
-
+		
 	}
 
-	public function editTemplate()
+	public function view()
 	{
-
-	}
-
-	public function getDescription()
-	{
-
-	}
-
-	public function render($view, $data = null, $return = false)
-	{
-
-	}
-
-	public function run()
-	{
-
-	}
-
-	public function editOptions()
-	{
-
-	}
-
-	public function editToolbar()
-	{
-
+		
 	}
 
 	/**
-	 * @SlotFor(EditorWidget)
+	 * Signal reactor
 	 * @param EditorWidget $signal
 	 */
 	public function reactOn(EditorWidget $signal)

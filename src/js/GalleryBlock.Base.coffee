@@ -5,8 +5,6 @@
 #
 class @Maslosoft.Gallery.GalleryBlock_Base extends @Maslosoft.Components.Model
 	id: ''
-	editable: true
-	hasOptions: true
 	context: 'view'
 	widgetTemplate: ''
 	optionsTemplate: ''
