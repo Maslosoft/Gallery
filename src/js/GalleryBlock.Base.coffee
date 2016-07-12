@@ -4,11 +4,9 @@
 # DO NOT MODIFY! ANY CHANGES MIGHT BE LOST.
 #
 class @Maslosoft.Gallery.GalleryBlock_Base extends @Maslosoft.Components.Model
-	id: ''
-	context: 'view'
 	widgetTemplate: ''
 	optionsTemplate: ''
-	cellAttributes: []
+	id: null
 	createUser: null
 	createDate: null
 	updateUser: null
