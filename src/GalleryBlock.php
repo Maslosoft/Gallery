@@ -15,7 +15,7 @@
 namespace Maslosoft\Gallery;
 
 use Maslosoft\Hi5Edit\Blocks\Base\ContentBlock;
-use Maslosoft\Hi5Edit\Interfaces\EditorWidgetInterface;
+use Maslosoft\Hi5Edit\Interfaces\EditorBlockInterface;
 use Maslosoft\Hi5Edit\Signals\EditorWidget;
 
 /**
@@ -26,17 +26,17 @@ use Maslosoft\Hi5Edit\Signals\EditorWidget;
  * @copyright licence
  * @author Piotr Maselkowski <piotr at maselkowski dot pl>
  */
-class GalleryBlock extends ContentBlock implements EditorWidgetInterface
+class GalleryBlock extends ContentBlock implements EditorBlockInterface
 {
 
 	public function edit()
 	{
-		
+
 	}
 
 	public function view()
 	{
-		
+
 	}
 
 	/**
