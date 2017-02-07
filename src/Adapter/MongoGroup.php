@@ -25,13 +25,11 @@ use InvalidArgumentException;
 class MongoGroup implements GalleryInterface
 {
 
-	public static $CLS = __CLASS__;
-
 	private $_groups = null;
 
 	public function getGroups()
 	{
-		
+
 	}
 
 	public function setData($data)

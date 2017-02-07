@@ -15,19 +15,28 @@
 namespace Maslosoft\Gallery;
 
 use CDataProvider;
-use Maslosoft\Ilmatar\Components\JavaScript;
 use Maslosoft\Gallery\Adapter\MongoGroup;
+use Maslosoft\Ilmatar\Components\JavaScript;
+use Maslosoft\Ilmatar\Widgets\Interfaces\DataProviderAwareInterface;
+use Maslosoft\Ilmatar\Widgets\Interfaces\WidgetInterface;
+use Maslosoft\Mangan\Interfaces\ModelAwareInterface;
 use Maslosoft\Ilmatar\Widgets\JsWidget;
 use Maslosoft\Ilmatar\Widgets\MsWidget;
+use Maslosoft\Ilmatar\Widgets\Traits\DataProviderAware;
+use Maslosoft\Ilmatar\Widgets\Traits\ModelAware;
 
 /**
  * Description of Gallery
  * @author Piotr
  */
-class GalleryWidget extends MsWidget
+class GalleryWidget extends MsWidget implements DataProviderAwareInterface, ModelAwareInterface,
+		WidgetInterface
 {
 
+	use DataProviderAware,
+	  ModelAware;
 // <editor-fold defaultstate="collapsed" desc="Display properties">
+
 	/**
 	 * Width of images group
 	 * @var int
@@ -91,17 +100,12 @@ class GalleryWidget extends MsWidget
 	];
 // </editor-fold>
 // <editor-fold defaultstate="collapsed" desc="Data related fields">
+
 	/**
 	 * Whenever to use groupping gallery or single images gallery
 	 * @var bool
 	 */
 	public $useGroups = true;
-
-	/**
-	 * Dataprovider
-	 * @var CDataProvider
-	 */
-	public $dataProvider = null;
 
 	/**
 	 *
@@ -117,17 +121,8 @@ class GalleryWidget extends MsWidget
 
 	public function init()
 	{
-//		$this->clientScript->registerPackage('ko');
-//		$this->clientScript->registerPackage('history');
-//		$this->clientScript->registerPackage('purl');
-//		$this->clientScript->registerPackage('screenfull');
-//		$this->clientScript->registerPackage('underscore');
-
 		$this->vm = new GalleryVm($this->id);
 		$this->vm->dp = $this->dataProvider;
-
-//		var_dump(uniqid());
-//		var_dump();
 
 		$options = [];
 		$optionKeys = [
@@ -154,7 +149,7 @@ class GalleryWidget extends MsWidget
 
 		if (null === $this->adapter)
 		{
-			$this->adapter = MongoGroup::$CLS;
+			$this->adapter = MongoGroup::class;
 		}
 		if ($this->useGroups)
 		{
@@ -175,7 +170,12 @@ class GalleryWidget extends MsWidget
 	{
 		foreach ($this->groups as $items)
 		{
-			$this->result[] = $this->_initGroup($items);
+			$result = $this->_initGroup($items);
+			if (empty($result))
+			{
+				continue;
+			}
+			$this->result[] = $result;
 		}
 	}
 
@@ -191,6 +191,10 @@ class GalleryWidget extends MsWidget
 	 */
 	private function _initGroup($items)
 	{
+		if (empty($items))
+		{
+			return false;
+		}
 		$result = [];
 		$amount = count($items);
 
